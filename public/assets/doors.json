@@ -1,5 +1,5 @@
 {
- "revision": "A5",
+ "revision": "A6",
  "items": [
   {
    "id": "D01",
@@ -70,7 +70,7 @@
    "hingeWorld": [
     4.1529,
     0.0,
-    4.0767
+    3.7719
    ],
    "baseYawRad": 0.0,
    "closedAngleRad": 0.0,

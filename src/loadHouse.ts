@@ -10,6 +10,7 @@ export interface House {
   doorMeshes: THREE.Mesh[];
   staticMeshes: THREE.Mesh[];
   ceilingMeshes: THREE.Mesh[];
+  fans: { node: THREE.Object3D; rps: number }[];
   stats: { sourceMeshes: number; mergedMeshes: number; triangles: number };
 }
 
@@ -46,6 +47,10 @@ export async function loadHouse(url: string, doors: DoorDef[], expectedBytes: nu
   const doorMeshes: THREE.Mesh[] = [];
   const doorOf = new Map<THREE.Object3D, string>();
   for (const [id, h] of hinges) h.traverse((o) => doorOf.set(o, id));
+  // spinning fan rotors (empties tagged sf_role=fan_rotor): keep their meshes out of the static merge
+  const fans: { node: THREE.Object3D; rps: number }[] = [];
+  const moving = new Set<THREE.Object3D>();
+  root.traverse((o) => { if (o.userData?.sf_role === 'fan_rotor') { fans.push({ node: o, rps: +(o.userData.sf_spin_rps ?? 1.2) }); o.traverse((c) => moving.add(c)); } });
 
   const groups = new Map<string, { mat: THREE.Material; geos: THREE.BufferGeometry[]; ceiling: boolean; shadow: boolean }>();
   const toRemove: THREE.Mesh[] = [];
@@ -63,6 +68,7 @@ export async function loadHouse(url: string, doors: DoorDef[], expectedBytes: nu
     m.receiveShadow = true;
     const did = doorOf.get(m);
     if (did) { m.userData.doorId = did; doorMeshes.push(m); return; }
+    if (moving.has(m)) { m.castShadow = false; return; }
     if (!merge) return;
     const ceiling = isCeiling(nodeName(m));
     const attrs = Object.keys(g.attributes).sort().join(',');
@@ -89,9 +95,9 @@ export async function loadHouse(url: string, doors: DoorDef[], expectedBytes: nu
     }
     root.add(merged);
   } else {
-    root.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh && !m.userData.doorId) { staticMeshes.push(m); if (isCeiling(nodeName(m))) ceilingMeshes.push(m); } });
+    root.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh && !m.userData.doorId && !moving.has(m)) { staticMeshes.push(m); if (isCeiling(nodeName(m))) ceilingMeshes.push(m); } });
   }
-  return { root, hinges, bases, doorMeshes, staticMeshes, ceilingMeshes,
+  return { root, hinges, bases, doorMeshes, staticMeshes, ceilingMeshes, fans,
            stats: { sourceMeshes, mergedMeshes: staticMeshes.length + doorMeshes.length, triangles: Math.round(triangles) } };
 }
 

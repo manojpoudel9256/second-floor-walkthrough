@@ -20,9 +20,9 @@
     <div class="help desktop">
       <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrows: walk · mouse: look</div>
       <div><kbd>E</kbd> or click: open / close the door you face</div>
-      <div><kbd>M</kbd> rooms · <kbd>R</kbd> back to the landing · <kbd>N</kbd> day / evening · <kbd>O</kbd> overview · <kbd>Esc</kbd> release mouse</div>
+      <div><kbd>M</kbd> rooms · <kbd>R</kbd> back to the landing · <kbd>N</kbd> day / night · <kbd>O</kbd> overview · <kbd>Esc</kbd> release mouse</div>
     </div>
-    <div class="help touch">Left thumb: walk · drag on the right: look · Door button: open / close</div>
+    <div class="help touch">Left thumb: walk · drag on the right: look · Door button: open / close · &#9776; for rooms, overview and full screen. Turn your phone sideways for landscape.</div>
   </section>
 
   <section id="paused" class="panel small" hidden>
@@ -34,17 +34,21 @@
     <div id="room">Passage</div>
     <div id="crosshair"></div>
     <div id="prompt" hidden></div>
-    <div id="toolbar">
+    <button id="btn-menu" class="glass" title="Menu" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <div id="toolbar" hidden>
       <button id="btn-rooms" title="Rooms (M)">Rooms</button>
-      <button id="btn-light" title="Day / evening (N)">Evening</button>
-      <button id="btn-inspect" title="Overview (O)">Overview</button>
+      <button id="btn-light" title="Day / night (N)">Day</button>
+      <button id="btn-inspect" title="Overview of the whole floor (O)">Overview</button>
+      <button id="btn-map" title="Show / hide the map">Hide map</button>
+      <button id="btn-full" title="Full screen / landscape">Full screen</button>
       <button id="btn-reset" title="Back to the landing (R)">Reset</button>
     </div>
     <div id="roommenu" hidden></div>
-    <canvas id="minimap" width="220" height="176"></canvas>
+    <canvas id="minimap" width="220" height="176" title="Tap to hide the map"></canvas>
     <div id="hint">Esc releases the mouse</div>
     <div id="stick"><div class="knob"></div></div>
     <button id="doorbtn" hidden>Door</button>
+    <button id="btn-walk" class="glass" hidden>Walk</button>
   </div>
   <pre id="debug" hidden></pre>
   <script type="module" src="./src/main.ts"></script>

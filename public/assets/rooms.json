@@ -1,10 +1,10 @@
 {
- "revision": "A5",
+ "revision": "A6",
  "spawn": {
   "position": [
    6.6548,
    0.0,
-   4.6482
+   4.4958
   ],
   "yawRad": 1.570796,
   "room": "R04",
@@ -72,13 +72,13 @@
     "max": [
      7.7724,
      0,
-     4.0767
+     3.7719
     ]
    },
    "jumpPoint": [
     6.475,
     0.0,
-    2.525
+    2.325
    ],
    "jumpVerified": true,
    "photoIdentity": "PHOTO_ROOM_DIAMOND"
@@ -91,7 +91,7 @@
     "min": [
      4.0005,
      0,
-     4.191
+     3.8862
     ],
     "max": [
      7.7724,
@@ -102,7 +102,7 @@
    "jumpPoint": [
     5.875,
     0.0,
-    4.625
+    4.475
    ],
    "jumpVerified": true,
    "photoIdentity": "PHOTO_PASSAGE"

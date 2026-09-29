@@ -1,9 +1,9 @@
 {
  "projectId": "second_floor_interior",
- "revision": "A5",
+ "revision": "A6",
  "variant": "PROVISIONAL_LAYOUT",
  "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
- "exported": "2026-09-29T12:17:56",
+ "exported": "2026-09-29T13:11:33",
  "blender": "5.2.0 LTS",
  "source": {
   "path": "references/proposed_plan/Second_Story_3D_Dimensions.json",
@@ -35,11 +35,11 @@
  },
  "glb": {
   "file": "second_floor.glb",
-  "bytes": 18795516,
-  "sha256": "495506092d854e3adfa1379a119949ebb2c4bd3a20286706ac0f8d804458499f"
+  "bytes": 20028988,
+  "sha256": "e9cfc1b25c57034f31dee506023e4fe0cb5a681076cbd4dcf6606d557110f586"
  },
  "counts": {
-  "exportedObjects": 690,
+  "exportedObjects": 710,
   "doors": 6,
   "staticColliders": 70,
   "floorColliders": 42,

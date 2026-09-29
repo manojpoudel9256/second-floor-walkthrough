@@ -1,5 +1,5 @@
 {
- "revision": "A5",
+ "revision": "A6",
  "variant": "PROVISIONAL_LAYOUT",
  "generated": "2026-09-29",
  "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
@@ -64,8 +64,8 @@
    "inner_m": 0.7
   },
   "R04": {
-   "type": "tray_plain",
-   "band_m": 0.2
+   "type": "flat",
+   "z_in": 118.0
   },
   "R05": {
    "type": "flat",
@@ -162,26 +162,38 @@
     157.5,
     9,
     306,
-    160.5
+    148.5
    ],
    "inside_width": 148.5,
    "inside_depth": 151.5,
    "ceiling_z": 120,
-   "status": "A"
+   "status": "A",
+   "source_bounds_xy": [
+    157.5,
+    9,
+    306,
+    160.5
+   ]
   },
   {
    "id": "R04",
    "name": "Passage",
    "bounds_xy": [
     157.5,
-    165,
+    153.0,
     306,
     201
    ],
    "inside_width": 148.5,
    "inside_depth": 36,
    "ceiling_z": 120,
-   "status": "A"
+   "status": "A",
+   "source_bounds_xy": [
+    157.5,
+    165,
+    306,
+    201
+   ]
   },
   {
    "id": "R05",
@@ -297,12 +309,18 @@
    "id": "P03",
    "bounds_xy": [
     157.5,
+    148.5,
+    306,
+    153.0
+   ],
+   "z0": 0,
+   "z1": 120,
+   "source_bounds_xy": [
+    157.5,
     160.5,
     306,
     165
-   ],
-   "z0": 0,
-   "z1": 120
+   ]
   },
   {
    "id": "P04",
@@ -431,7 +449,7 @@
    "leaf_h": 84,
    "hinge": [
     163.5,
-    160.5
+    148.5
    ],
    "angles": [
     0,
@@ -439,22 +457,22 @@
    ],
    "tag": [
     184,
-    145
+    133.0
    ],
    "swing": "Into bedroom",
    "ext": false,
    "opening": [
     162.5,
-    160.5,
+    148.5,
     200.5,
-    165
+    153.0
    ],
    "rough_w": 38,
    "rough_h": 85,
    "leaf_thickness": 1.5,
    "hinge_xyz": [
     163.5,
-    160.5,
+    148.5,
     0
    ],
    "wall_void_z": [
@@ -790,14 +808,20 @@
   "wall": "P01",
   "bounds_xy": [
    153,
-   165,
+   157.0,
    157.5,
    201
   ],
   "z0": 0,
   "z1": 96,
-  "width": 36,
-  "height": 96
+  "width": 44.0,
+  "height": 96,
+  "source_bounds_xy": [
+   153,
+   165,
+   157.5,
+   201
+  ]
  },
  "open_stair_mouth": {
   "bounds_xy": [
@@ -978,7 +1002,7 @@
   ],
   "shared_top_landing_xy": [
    228,
-   165,
+   153.0,
    306,
    233.5
   ],
@@ -1608,5 +1632,11 @@
    ],
    "reason": "X13: proposal hinge at the north jamb parks the open leaf across the only route east of the bed (0.40 m < 0.50 m capsule). Hinge moved to the south jamb; still swings into R02."
   }
+ },
+ "passageWidening": {
+  "shift_in": 12.0,
+  "passage_clear_in": 48.0,
+  "o01_width_in": 44.0,
+  "reason": "X16: user asked for a wider passage; P03 moved north into Bedroom 2 (largest room)."
  }
 }

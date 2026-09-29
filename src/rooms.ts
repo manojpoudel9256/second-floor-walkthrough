@@ -26,10 +26,10 @@ export class Minimap {
       g.fillStyle = fill;
       g.fillRect((b.c[0] - b.h[0] - this.ox) * this.s, (b.c[2] - b.h[2] - this.oz) * this.s, 2 * b.h[0] * this.s, 2 * b.h[2] * this.s);
     };
-    for (const b of cols.floor) if (b.c[1] + b.h[1] > -0.2 && b.id !== 'OUTSIDE__GROUND') rect(b, 'rgba(236,231,222,0.95)');
-    for (const b of cols.furniture) rect(b, 'rgba(176,146,110,0.8)');
-    for (const b of cols.static) if (b.h[1] > 0.4) rect(b, '#3a3f47');
-    g.font = '600 10px system-ui, sans-serif'; g.fillStyle = '#5b6470'; g.textAlign = 'center';
+    for (const b of cols.floor) if (b.c[1] + b.h[1] > -0.2 && b.id !== 'OUTSIDE__GROUND') rect(b, 'rgba(255,255,255,0.16)');
+    for (const b of cols.furniture) rect(b, 'rgba(214,184,140,0.45)');
+    for (const b of cols.static) if (b.h[1] > 0.4) rect(b, 'rgba(255,255,255,0.82)');
+    g.font = '600 10px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.8)'; g.textAlign = 'center';
     for (const r of rooms) {
       if (!r.id.startsWith('R') || r.id === 'R07') continue;
       const cx = (r.boundsThree.min[0] + r.boundsThree.max[0]) / 2, cz = (r.boundsThree.min[2] + r.boundsThree.max[2]) / 2;
@@ -42,13 +42,13 @@ export class Minimap {
     const c = this.ctx;
     c.clearRect(0, 0, this.canvas.width, this.canvas.height);
     c.drawImage(this.base, 0, 0);
-    c.strokeStyle = '#b8742a'; c.lineWidth = 2.5;
+    c.strokeStyle = '#ffb45c'; c.lineWidth = 2.5;
     for (const [x0, z0, x1, z1] of doorLines) {
       c.beginPath(); c.moveTo((x0 - this.ox) * this.s, (z0 - this.oz) * this.s); c.lineTo((x1 - this.ox) * this.s, (z1 - this.oz) * this.s); c.stroke();
     }
     const px = (x - this.ox) * this.s, pz = (z - this.oz) * this.s;
     c.save(); c.translate(px, pz); c.rotate(-yaw);
-    c.fillStyle = '#1f6feb'; c.beginPath(); c.moveTo(0, -9); c.lineTo(6, 6); c.lineTo(0, 3); c.lineTo(-6, 6); c.closePath(); c.fill();
+    c.fillStyle = '#4ea1ff'; c.beginPath(); c.moveTo(0, -9); c.lineTo(6, 6); c.lineTo(0, 3); c.lineTo(-6, 6); c.closePath(); c.fill();
     c.restore();
   }
 }

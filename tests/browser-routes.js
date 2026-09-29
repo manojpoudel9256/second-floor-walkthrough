@@ -6,7 +6,10 @@
   const out = [];
   const rec = (name, pass, detail) => out.push({ name, pass: !!pass, detail });
   const tp = (x, y, yaw = 0) => { const p = P(x, y); S.teleport(p[0], 0, p[2]); S.look(yaw); };
-  const closeAll = () => { for (const [id, d] of Object.entries(S.state().doors)) if (d.state !== 'closed') { S.toggleDoor(id); } S.idle(1); };
+  const closeAll = () => {                              // stand clear at the spawn first, so no door closes onto the tester
+    S.teleport(...S.spawn.position);
+    for (let k = 0; k < 3; k++) { for (const [id, d] of Object.entries(S.state().doors)) if (d.state !== 'closed') S.toggleDoor(id); S.idle(1); }
+  };
   const open = (id) => { if (S.state().doors[id].state !== 'open') S.toggleDoor(id); for (let t = 0; t < 30 && !['open', 'blocked'].includes(S.state().doors[id].state); t++) S.idle(0.1); return S.state().doors[id]; };
   const V = 1.4;
 
@@ -17,7 +20,7 @@
 
   // 2 closed D03 blocks; open D03 admits into R03
   closeAll(); tp(181, 183); s = S.walk(0, -V, 1.5);
-  rec('closed D03 blocks passage -> R03', s.room === 'R04' && s.pos[2] > 165 * IN, s);
+  rec('closed D03 blocks passage -> R03', s.room === 'R04' && s.pos[2] > 153 * IN, s);
   rec('D03 opens (into bedroom)', open('D03').state === 'open', S.state().doors.D03);
   s = S.walk(0, -V, 2.5); rec('open D03 -> R03 reachable', s.room === 'R03', s);
 

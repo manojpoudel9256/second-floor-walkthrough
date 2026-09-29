@@ -106,6 +106,15 @@ export class Physics {
     return !hit;
   }
 
+  /** True if every sub-angle of this step's travel is clear of the player (the leaf is nearest the
+   * player at the START of a swing away from them, so checking only the end angle is not enough). */
+  stepClear(d: DoorRuntime): boolean {
+    const m = d.motion, total = (m.dir * FIXED_DT) / m.duration;
+    const n = Math.max(1, Math.ceil((Math.abs(total) * 2 * Math.abs(m.openAngle)) / 0.02));
+    for (let i = 1; i <= n; i++) if (!this.doorCanOccupy(d, m.angleAt(Math.min(1, Math.max(0, m.progress + (total * i) / n))))) return false;
+    return true;
+  }
+
   toggleDoor(d: DoorRuntime) {
     // after a block: carry on only if the whole remaining swing is now clear, otherwise back away
     d.motion.toggle(d.motion.blocked && d.motion.remainingAngles().every((a) => this.doorCanOccupy(d, a)));
@@ -132,8 +141,7 @@ export class Physics {
     for (const d of this.doors.values()) {
       const m = d.motion;
       if (m.dir === 0 || m.blocked) { d.holdS = 0; continue; }
-      const next = m.angleAt(Math.min(1, Math.max(0, m.progress + (m.dir * FIXED_DT) / m.duration)));
-      if (this.doorCanOccupy(d, next)) { d.holdS = 0; continue; }
+      if (this.stepClear(d)) { d.holdS = 0; continue; }
       if (m.dir > 0) {
         // step out of the leaf's swept circle: radially away from the hinge, or side-step if furniture is in the way
         const radial = new THREE.Vector3(this.pos.x - d.hingePos.x, 0, this.pos.z - d.hingePos.z);
@@ -171,7 +179,7 @@ export class Physics {
       const m = d.motion;
       const opening = m.dir > 0;
       // an opening door waits (up to YIELD_MAX_S) while the player steps back; otherwise normal stepping
-      if (!(opening && d.holdS > 0 && d.holdS < YIELD_MAX_S && !this.doorCanOccupy(d, m.angleAt(Math.min(1, m.progress + FIXED_DT / m.duration))))) {
+      if (!(opening && d.holdS > 0 && d.holdS < YIELD_MAX_S && !this.stepClear(d))) {
         m.step(FIXED_DT, (a) => this.doorCanOccupy(d, a));
       }
       d.hinge.rotation.y = m.angle;
