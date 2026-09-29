@@ -1,0 +1,1612 @@
+{
+ "revision": "A5",
+ "variant": "PROVISIONAL_LAYOUT",
+ "generated": "2026-09-29",
+ "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
+ "source": {
+  "path": "references/proposed_plan/Second_Story_3D_Dimensions.json",
+  "revision": "03",
+  "sha256": "0fdfdbe8c676a508bb0b4093b59e572ae4f7fb0ba7cca7656e73bd811b4eb8f1"
+ },
+ "units": "plan inches (x right, y down, z up); blender = (x, -y, z) * 0.0254",
+ "inchToMetre": 0.0254,
+ "heights_in": {
+  "ffl": 0.0,
+  "slabUnderside": 120.0,
+  "slabTop": 126.0,
+  "traySoffit": 114.0,
+  "centralCeiling": 118.0,
+  "note": "Minimum clear under tray = 114 in (9 ft 6 in). Alternate: if 10 ft is finished soffit, add 6 in to all three."
+ },
+ "roomFloorRise_m": {
+  "R05": 0.05,
+  "R06": 0.05
+ },
+ "photoRoomMapping": {
+  "PHOTO_ROOM_LIVING": "R01",
+  "PHOTO_PASSAGE": "R04",
+  "PHOTO_WET_AREA": "R05",
+  "PHOTO_ROOM_DIAMOND": "R03",
+  "PHOTO_ROOM_CIRCLE": "R02",
+  "status": "VISUALLY_SUPPORTED; filename Master_Bedroom.jpg conflicts (shows R03)"
+ },
+ "roomLabels": {
+  "R01": "Living room",
+  "R02": "Bedroom 1 (attached bath)",
+  "R03": "Bedroom 2",
+  "R04": "Passage",
+  "R05": "Common bathroom",
+  "R06": "Attached bathroom",
+  "R07": "Stair landing",
+  "B01": "Balcony (living)",
+  "B02": "Terrace (passage)"
+ },
+ "ceilings": {
+  "R01": {
+   "type": "tray_circles",
+   "band_m": 0.6,
+   "circles": 3,
+   "ring_od_m": 1.0,
+   "core_d_m": 0.6,
+   "pitch_m": 1.25,
+   "axis": "y"
+  },
+  "R02": {
+   "type": "tray_concentric",
+   "band_m": 0.5,
+   "outer_od_m": 1.6,
+   "core_d_m": 0.7
+  },
+  "R03": {
+   "type": "tray_diamond",
+   "band_m": 0.5,
+   "square_m": 1.3,
+   "inner_m": 0.7
+  },
+  "R04": {
+   "type": "tray_plain",
+   "band_m": 0.2
+  },
+  "R05": {
+   "type": "flat",
+   "z_in": 108.0
+  },
+  "R06": {
+   "type": "flat",
+   "z_in": 108.0
+  },
+  "R07": {
+   "type": "flat",
+   "z_in": 114.0
+  }
+ },
+ "finishes": {
+  "floorTile_mm": [
+   800,
+   800
+  ],
+  "joint_mm": 2,
+  "skirting_h_m": 0.08,
+  "skirting_t_m": 0.012,
+  "bathWallTile_h_in": 84
+ },
+ "doorFitting": {
+  "hingeGap_m": 0.003,
+  "latchGap_m": 0.003,
+  "undercut_m": 0.008,
+  "jamb_in": 1.0,
+  "head_in": 1.0
+ },
+ "windowFitting_m": 0.005,
+ "d01Transom": {
+  "voidTop_in": 96.0
+ },
+ "passagePier": {
+  "bounds_xy": [
+   223.5,
+   199.0,
+   232.5,
+   205.5
+  ],
+  "z": [
+   0,
+   120
+  ]
+ },
+ "player": {
+  "radius_m": 0.22,
+  "height_m": 1.7,
+  "eye_m": 1.6,
+  "walk_m_s": 1.4,
+  "maxStep_m": 0.08
+ },
+ "building_outer_xy": [
+  0,
+  0,
+  315,
+  358.5
+ ],
+ "rooms": [
+  {
+   "id": "R01",
+   "name": "Living room",
+   "bounds_xy": [
+    9,
+    9,
+    153,
+    201
+   ],
+   "inside_width": 144,
+   "inside_depth": 192,
+   "ceiling_z": 120,
+   "status": "C"
+  },
+  {
+   "id": "R02",
+   "name": "Master bedroom",
+   "bounds_xy": [
+    9,
+    205.5,
+    153,
+    349.5
+   ],
+   "inside_width": 144,
+   "inside_depth": 144.0,
+   "ceiling_z": 120,
+   "status": "S"
+  },
+  {
+   "id": "R03",
+   "name": "Bedroom",
+   "bounds_xy": [
+    157.5,
+    9,
+    306,
+    160.5
+   ],
+   "inside_width": 148.5,
+   "inside_depth": 151.5,
+   "ceiling_z": 120,
+   "status": "A"
+  },
+  {
+   "id": "R04",
+   "name": "Passage",
+   "bounds_xy": [
+    157.5,
+    165,
+    306,
+    201
+   ],
+   "inside_width": 148.5,
+   "inside_depth": 36,
+   "ceiling_z": 120,
+   "status": "A"
+  },
+  {
+   "id": "R05",
+   "name": "Common bath / WC",
+   "bounds_xy": [
+    157.5,
+    205.5,
+    223.5,
+    279
+   ],
+   "inside_width": 66.0,
+   "inside_depth": 73.5,
+   "ceiling_z": 120,
+   "status": "A"
+  },
+  {
+   "id": "R06",
+   "name": "Attached bath / WC",
+   "bounds_xy": [
+    157.5,
+    283.5,
+    223.5,
+    349.5
+   ],
+   "inside_width": 66.0,
+   "inside_depth": 66.0,
+   "ceiling_z": 120,
+   "status": "S"
+  },
+  {
+   "id": "R07",
+   "name": "Stair enclosure",
+   "bounds_xy": [
+    228,
+    205.5,
+    306,
+    349.5
+   ],
+   "inside_width": 78,
+   "inside_depth": 144.0,
+   "ceiling_z": 120,
+   "status": "A"
+  }
+ ],
+ "walls": [
+  {
+   "id": "E01",
+   "bounds_xy": [
+    0,
+    0,
+    315,
+    9
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "E02",
+   "bounds_xy": [
+    306,
+    9,
+    315,
+    349.5
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "E03",
+   "bounds_xy": [
+    0,
+    349.5,
+    315,
+    358.5
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "E04",
+   "bounds_xy": [
+    0,
+    9,
+    9,
+    349.5
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "P01",
+   "bounds_xy": [
+    153,
+    9,
+    157.5,
+    349.5
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "P02",
+   "bounds_xy": [
+    9,
+    201,
+    228,
+    205.5
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "P03",
+   "bounds_xy": [
+    157.5,
+    160.5,
+    306,
+    165
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "P04",
+   "bounds_xy": [
+    223.5,
+    205.5,
+    228,
+    349.5
+   ],
+   "z0": 0,
+   "z1": 120
+  },
+  {
+   "id": "P05",
+   "bounds_xy": [
+    157.5,
+    279,
+    223.5,
+    283.5
+   ],
+   "z0": 0,
+   "z1": 120
+  }
+ ],
+ "doors": [
+  {
+   "id": "D01",
+   "room": "Living / balcony B01",
+   "wall": "E04",
+   "axis": "Y",
+   "start": 159,
+   "end": 195,
+   "leaf_w": 36,
+   "leaf_h": 84,
+   "hinge": [
+    0,
+    195
+   ],
+   "angles": [
+    270,
+    180
+   ],
+   "tag": [
+    45,
+    180
+   ],
+   "swing": "Out to B01",
+   "ext": true,
+   "opening": [
+    0,
+    158,
+    9,
+    196
+   ],
+   "rough_w": 38,
+   "rough_h": 85,
+   "leaf_thickness": 1.75,
+   "hinge_xyz": [
+    0,
+    195,
+    0
+   ],
+   "wall_void_z": [
+    0,
+    85
+   ],
+   "leaf_z": [
+    0,
+    84
+   ]
+  },
+  {
+   "id": "D02",
+   "room": "Living / master",
+   "wall": "P02",
+   "axis": "X",
+   "start": 111,
+   "end": 147,
+   "leaf_w": 36,
+   "leaf_h": 84,
+   "hinge": [
+    147,
+    205.5
+   ],
+   "angles": [
+    180,
+    90
+   ],
+   "tag": [
+    135,
+    250
+   ],
+   "swing": "Into master",
+   "ext": false,
+   "opening": [
+    110,
+    201,
+    148,
+    205.5
+   ],
+   "rough_w": 38,
+   "rough_h": 85,
+   "leaf_thickness": 1.5,
+   "hinge_xyz": [
+    147,
+    205.5,
+    0
+   ],
+   "wall_void_z": [
+    0,
+    85
+   ],
+   "leaf_z": [
+    0,
+    84
+   ]
+  },
+  {
+   "id": "D03",
+   "room": "Passage / bedroom",
+   "wall": "P03",
+   "axis": "X",
+   "start": 163.5,
+   "end": 199.5,
+   "leaf_w": 36,
+   "leaf_h": 84,
+   "hinge": [
+    163.5,
+    160.5
+   ],
+   "angles": [
+    0,
+    270
+   ],
+   "tag": [
+    184,
+    145
+   ],
+   "swing": "Into bedroom",
+   "ext": false,
+   "opening": [
+    162.5,
+    160.5,
+    200.5,
+    165
+   ],
+   "rough_w": 38,
+   "rough_h": 85,
+   "leaf_thickness": 1.5,
+   "hinge_xyz": [
+    163.5,
+    160.5,
+    0
+   ],
+   "wall_void_z": [
+    0,
+    85
+   ],
+   "leaf_z": [
+    0,
+    84
+   ],
+   "source_values": {
+    "hinge_xyz": [
+     199.5,
+     160.5,
+     0
+    ],
+    "angles": [
+     180,
+     270
+    ]
+   }
+  },
+  {
+   "id": "D04",
+   "room": "Passage / common WC",
+   "wall": "P02",
+   "axis": "X",
+   "start": 163.5,
+   "end": 193.5,
+   "leaf_w": 30,
+   "leaf_h": 84,
+   "hinge": [
+    163.5,
+    205.5
+   ],
+   "angles": [
+    0,
+    90
+   ],
+   "tag": [
+    178,
+    219
+   ],
+   "swing": "Into common WC",
+   "ext": false,
+   "opening": [
+    162.5,
+    201,
+    194.5,
+    205.5
+   ],
+   "rough_w": 32,
+   "rough_h": 85,
+   "leaf_thickness": 1.5,
+   "hinge_xyz": [
+    163.5,
+    205.5,
+    0
+   ],
+   "wall_void_z": [
+    0,
+    85
+   ],
+   "leaf_z": [
+    0,
+    84
+   ]
+  },
+  {
+   "id": "D05",
+   "room": "Master / attached WC",
+   "wall": "P01",
+   "axis": "Y",
+   "start": 289.5,
+   "end": 319.5,
+   "leaf_w": 30,
+   "leaf_h": 84,
+   "hinge": [
+    153,
+    319.5
+   ],
+   "angles": [
+    270,
+    180
+   ],
+   "tag": [
+    135,
+    310
+   ],
+   "swing": "Out into master",
+   "ext": false,
+   "opening": [
+    153,
+    288.5,
+    157.5,
+    320.5
+   ],
+   "rough_w": 32,
+   "rough_h": 85,
+   "leaf_thickness": 1.5,
+   "hinge_xyz": [
+    153,
+    319.5,
+    0
+   ],
+   "wall_void_z": [
+    0,
+    85
+   ],
+   "leaf_z": [
+    0,
+    84
+   ],
+   "source_values": {
+    "hinge_xyz": [
+     153,
+     289.5,
+     0
+    ],
+    "angles": [
+     90,
+     180
+    ]
+   }
+  },
+  {
+   "id": "D06",
+   "room": "Passage / balcony B02",
+   "wall": "E02",
+   "axis": "Y",
+   "start": 165,
+   "end": 201,
+   "leaf_w": 36,
+   "leaf_h": 84,
+   "hinge": [
+    315,
+    201
+   ],
+   "angles": [
+    270,
+    360
+   ],
+   "tag": [
+    293,
+    183
+   ],
+   "swing": "Out to B02",
+   "ext": true,
+   "opening": [
+    306,
+    164,
+    315,
+    202
+   ],
+   "rough_w": 38,
+   "rough_h": 85,
+   "leaf_thickness": 1.75,
+   "hinge_xyz": [
+    315,
+    201,
+    0
+   ],
+   "wall_void_z": [
+    0,
+    85
+   ],
+   "leaf_z": [
+    0,
+    84
+   ]
+  }
+ ],
+ "windows": [
+  {
+   "id": "W01",
+   "room": "Living",
+   "wall": "E04",
+   "axis": "Y",
+   "start": 39,
+   "end": 99,
+   "h": 48,
+   "sill": 36,
+   "tag": [
+    23,
+    70
+   ],
+   "width": 60,
+   "head": 84,
+   "opening": [
+    0,
+    39,
+    9,
+    99
+   ],
+   "opening_z": [
+    36,
+    84
+   ]
+  },
+  {
+   "id": "W02",
+   "room": "Master",
+   "wall": "E04",
+   "axis": "Y",
+   "start": 244.5,
+   "end": 304.5,
+   "h": 48,
+   "sill": 36,
+   "tag": [
+    23,
+    275
+   ],
+   "width": 60.0,
+   "head": 84,
+   "opening": [
+    0,
+    244.5,
+    9,
+    304.5
+   ],
+   "opening_z": [
+    36,
+    84
+   ]
+  },
+  {
+   "id": "W03",
+   "room": "Master",
+   "wall": "E03",
+   "axis": "X",
+   "start": 39,
+   "end": 111,
+   "h": 48,
+   "sill": 36,
+   "tag": [
+    75,
+    340
+   ],
+   "width": 72,
+   "head": 84,
+   "opening": [
+    39,
+    349.5,
+    111,
+    358.5
+   ],
+   "opening_z": [
+    36,
+    84
+   ]
+  },
+  {
+   "id": "W04",
+   "room": "Bedroom",
+   "wall": "E01",
+   "axis": "X",
+   "start": 195,
+   "end": 267,
+   "h": 48,
+   "sill": 36,
+   "tag": [
+    231,
+    23
+   ],
+   "width": 72,
+   "head": 84,
+   "opening": [
+    195,
+    0,
+    267,
+    9
+   ],
+   "opening_z": [
+    36,
+    84
+   ]
+  },
+  {
+   "id": "W05",
+   "room": "Bedroom",
+   "wall": "E02",
+   "axis": "Y",
+   "start": 33,
+   "end": 93,
+   "h": 48,
+   "sill": 36,
+   "tag": [
+    291,
+    64
+   ],
+   "width": 60,
+   "head": 84,
+   "opening": [
+    306,
+    33,
+    315,
+    93
+   ],
+   "opening_z": [
+    36,
+    84
+   ]
+  },
+  {
+   "id": "V01",
+   "room": "Attached WC",
+   "wall": "E03",
+   "axis": "X",
+   "start": 171,
+   "end": 195,
+   "h": 18,
+   "sill": 84,
+   "tag": [
+    183,
+    365
+   ],
+   "width": 24,
+   "head": 102,
+   "opening": [
+    171,
+    349.5,
+    195,
+    358.5
+   ],
+   "opening_z": [
+    84,
+    102
+   ]
+  }
+ ],
+ "cased_opening": {
+  "id": "O01",
+  "wall": "P01",
+  "bounds_xy": [
+   153,
+   165,
+   157.5,
+   201
+  ],
+  "z0": 0,
+  "z1": 96,
+  "width": 36,
+  "height": 96
+ },
+ "open_stair_mouth": {
+  "bounds_xy": [
+   228,
+   201,
+   306,
+   205.5
+  ],
+  "height": 120,
+  "note": "No wall or door here"
+ },
+ "balconies": [
+  {
+   "id": "B01",
+   "bounds": [
+    -76,
+    138,
+    0,
+    224
+   ],
+   "clear": [
+    -72,
+    142,
+    0,
+    220
+   ],
+   "guard": [
+    [
+     0,
+     140
+    ],
+    [
+     -74,
+     140
+    ],
+    [
+     -74,
+     222
+    ],
+    [
+     0,
+     222
+    ]
+   ],
+   "label": [
+    -38,
+    150
+   ],
+   "floor_z": -2,
+   "slab_bottom_z": -8,
+   "curb_width": 4,
+   "curb_height": 4,
+   "guard_height_above_deck": 42,
+   "guard_top_z": 40
+  },
+  {
+   "id": "B02",
+   "bounds": [
+    315,
+    138,
+    391,
+    224
+   ],
+   "clear": [
+    315,
+    142,
+    387,
+    220
+   ],
+   "guard": [
+    [
+     315,
+     140
+    ],
+    [
+     389,
+     140
+    ],
+    [
+     389,
+     222
+    ],
+    [
+     315,
+     222
+    ]
+   ],
+   "label": [
+    353,
+    150
+   ],
+   "floor_z": -2,
+   "slab_bottom_z": -8,
+   "curb_width": 4,
+   "curb_height": 4,
+   "guard_height_above_deck": 42,
+   "guard_top_z": 40
+  }
+ ],
+ "guard_spec": {
+  "post_section": [
+   2,
+   2
+  ],
+  "max_post_spacing": 48,
+  "top_rail_section": [
+   2,
+   2
+  ],
+  "baluster_section": [
+   0.75,
+   0.75
+  ],
+  "baluster_center_spacing": 4,
+  "clear_baluster_gap": 3.25,
+  "base_curb_z": [
+   -2,
+   2
+  ],
+  "bottom_rail_z": [
+   4,
+   6
+  ],
+  "top_rail_z": [
+   38,
+   40
+  ],
+  "baluster_z": [
+   6,
+   38
+  ],
+  "guard_position": "All rail parts lie in the 4-inch perimeter curb zone",
+  "end_condition": "Terminate against building wall; no openings at free edges",
+  "stair_well_posts": "2-inch posts entirely inside 6-inch well; rail fixing outside 36-inch treads"
+ },
+ "stair": {
+  "bounds": [
+   228,
+   205.5,
+   306,
+   349.5
+  ],
+  "lower_floor_z": -126,
+  "upper_floor_z": 0,
+  "riser_count": 18,
+  "riser_height": 7,
+  "risers_per_flight": 9,
+  "treads_per_flight": 8,
+  "going": 10,
+  "run_per_flight": 80,
+  "flight_width": 36,
+  "well_width": 6,
+  "lower_flight_xy": [
+   228,
+   233.5,
+   264,
+   313.5
+  ],
+  "upper_flight_xy": [
+   270,
+   233.5,
+   306,
+   313.5
+  ],
+  "mid_landing_box": [
+   228,
+   313.5,
+   -69,
+   306,
+   349.5,
+   -63
+  ],
+  "head_landing_xy": [
+   228,
+   205.5,
+   306,
+   233.5
+  ],
+  "shared_top_landing_xy": [
+   228,
+   165,
+   306,
+   233.5
+  ],
+  "floor_slab_void_xy": [
+   228,
+   233.5,
+   306,
+   349.5
+  ],
+  "head_guard_xy": [
+   228,
+   233.5,
+   264,
+   233.5
+  ],
+  "handrail_height_above_nosing": 36,
+  "guard_height_above_nosing": 42,
+  "tread_slab_visual_thickness": 6,
+  "tread_boxes": [
+   {
+    "flight": "upper",
+    "number": 1,
+    "box": [
+     270,
+     233.5,
+     -13,
+     306,
+     243.5,
+     -7
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 1,
+    "box": [
+     228,
+     303.5,
+     -76,
+     264,
+     313.5,
+     -70
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 2,
+    "box": [
+     270,
+     243.5,
+     -20,
+     306,
+     253.5,
+     -14
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 2,
+    "box": [
+     228,
+     293.5,
+     -83,
+     264,
+     303.5,
+     -77
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 3,
+    "box": [
+     270,
+     253.5,
+     -27,
+     306,
+     263.5,
+     -21
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 3,
+    "box": [
+     228,
+     283.5,
+     -90,
+     264,
+     293.5,
+     -84
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 4,
+    "box": [
+     270,
+     263.5,
+     -34,
+     306,
+     273.5,
+     -28
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 4,
+    "box": [
+     228,
+     273.5,
+     -97,
+     264,
+     283.5,
+     -91
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 5,
+    "box": [
+     270,
+     273.5,
+     -41,
+     306,
+     283.5,
+     -35
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 5,
+    "box": [
+     228,
+     263.5,
+     -104,
+     264,
+     273.5,
+     -98
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 6,
+    "box": [
+     270,
+     283.5,
+     -48,
+     306,
+     293.5,
+     -42
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 6,
+    "box": [
+     228,
+     253.5,
+     -111,
+     264,
+     263.5,
+     -105
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 7,
+    "box": [
+     270,
+     293.5,
+     -55,
+     306,
+     303.5,
+     -49
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 7,
+    "box": [
+     228,
+     243.5,
+     -118,
+     264,
+     253.5,
+     -112
+    ]
+   },
+   {
+    "flight": "upper",
+    "number": 8,
+    "box": [
+     270,
+     303.5,
+     -62,
+     306,
+     313.5,
+     -56
+    ]
+   },
+   {
+    "flight": "lower",
+    "number": 8,
+    "box": [
+     228,
+     233.5,
+     -125,
+     264,
+     243.5,
+     -119
+    ]
+   }
+  ],
+  "closed_flight_solids": [
+   {
+    "flight": "upper",
+    "x_range": [
+     270,
+     306
+    ],
+    "section_yz": [
+     [
+      233.5,
+      0
+     ],
+     [
+      233.5,
+      -7
+     ],
+     [
+      243.5,
+      -7
+     ],
+     [
+      243.5,
+      -14
+     ],
+     [
+      253.5,
+      -14
+     ],
+     [
+      253.5,
+      -21
+     ],
+     [
+      263.5,
+      -21
+     ],
+     [
+      263.5,
+      -28
+     ],
+     [
+      273.5,
+      -28
+     ],
+     [
+      273.5,
+      -35
+     ],
+     [
+      283.5,
+      -35
+     ],
+     [
+      283.5,
+      -42
+     ],
+     [
+      293.5,
+      -42
+     ],
+     [
+      293.5,
+      -49
+     ],
+     [
+      303.5,
+      -49
+     ],
+     [
+      303.5,
+      -56
+     ],
+     [
+      313.5,
+      -56
+     ],
+     [
+      313.5,
+      -63
+     ],
+     [
+      313.5,
+      -69
+     ],
+     [
+      233.5,
+      -13
+     ]
+    ]
+   },
+   {
+    "flight": "lower",
+    "x_range": [
+     228,
+     264
+    ],
+    "section_yz": [
+     [
+      313.5,
+      -63
+     ],
+     [
+      313.5,
+      -70
+     ],
+     [
+      303.5,
+      -70
+     ],
+     [
+      303.5,
+      -77
+     ],
+     [
+      293.5,
+      -77
+     ],
+     [
+      293.5,
+      -84
+     ],
+     [
+      283.5,
+      -84
+     ],
+     [
+      283.5,
+      -91
+     ],
+     [
+      273.5,
+      -91
+     ],
+     [
+      273.5,
+      -98
+     ],
+     [
+      263.5,
+      -98
+     ],
+     [
+      263.5,
+      -105
+     ],
+     [
+      253.5,
+      -105
+     ],
+     [
+      253.5,
+      -112
+     ],
+     [
+      243.5,
+      -112
+     ],
+     [
+      243.5,
+      -119
+     ],
+     [
+      233.5,
+      -119
+     ],
+     [
+      233.5,
+      -126
+     ],
+     [
+      233.5,
+      -132
+     ],
+     [
+      313.5,
+      -76
+     ]
+    ]
+   }
+  ],
+  "solid_note": "Use closed_flight_solids instead of tread boxes for a solid staircase. Six-inch minimum vertical understep thickness is a visual assumption, not structural waist design."
+ },
+ "fixtures": [
+  {
+   "id": "F01",
+   "name": "TV console",
+   "box": [
+    27,
+    11,
+    0,
+    123,
+    23,
+    24
+   ],
+   "representation": "fixture / furniture bounding envelope"
+  },
+  {
+   "id": "F02",
+   "name": "Wardrobe",
+   "box": [
+    13,
+    208.5,
+    0,
+    103,
+    232.5,
+    84
+   ],
+   "representation": "fixture / furniture bounding envelope"
+  },
+  {
+   "id": "F03",
+   "name": "Common WC envelope",
+   "box": [
+    200,
+    254,
+    0,
+    214,
+    279,
+    30
+   ],
+   "representation": "fixture / furniture bounding envelope"
+  },
+  {
+   "id": "F04",
+   "name": "Common basin",
+   "box": [
+    204,
+    208,
+    30,
+    220,
+    220,
+    34
+   ],
+   "representation": "fixture / furniture bounding envelope"
+  },
+  {
+   "id": "F05",
+   "name": "Attached WC envelope",
+   "box": [
+    200,
+    324.5,
+    0,
+    214,
+    349.5,
+    30
+   ],
+   "representation": "fixture / furniture bounding envelope"
+  },
+  {
+   "id": "F06",
+   "name": "Attached basin",
+   "box": [
+    204,
+    285,
+    30,
+    220,
+    297,
+    34
+   ],
+   "representation": "fixture / furniture bounding envelope"
+  },
+  {
+   "id": "F07",
+   "name": "Common open shower zone",
+   "box": [
+    157.5,
+    243,
+    0,
+    193.5,
+    279,
+    84
+   ],
+   "representation": "open floor zone, not a solid box"
+  },
+  {
+   "id": "F08",
+   "name": "Attached open shower zone",
+   "box": [
+    157.5,
+    313.5,
+    0,
+    193.5,
+    349.5,
+    84
+   ],
+   "representation": "open floor zone, not a solid box"
+  }
+ ],
+ "slabs": {
+  "current_floor_box": [
+   0,
+   0,
+   -6,
+   315,
+   358.5,
+   0
+  ],
+  "current_floor_subtract_void": [
+   228,
+   233.5,
+   306,
+   349.5
+  ],
+  "ceiling_slab_box": [
+   0,
+   0,
+   120,
+   315,
+   358.5,
+   126
+  ],
+  "ceiling_slab_note": "Flat covering for visualization; no additional stair to roof assumed"
+ },
+ "wetrooms": {
+  "layout": "Each room includes WC, basin and 36 x 36 inch open shower zone; no fixed glass or curb",
+  "room_floor_z": 0,
+  "shower_head_height": 84,
+  "mixer_height": 42,
+  "drain_size": [
+   4,
+   4
+  ],
+  "drain_centers": [
+   [
+    175.5,
+    261,
+    -0.25
+   ],
+   [
+    175.5,
+    331.5,
+    -0.25
+   ]
+  ],
+  "shower_heads": [
+   [
+    157.5,
+    261,
+    84
+   ],
+   [
+    157.5,
+    331.5,
+    84
+   ]
+  ],
+  "shower_mixer_points": [
+   [
+    157.5,
+    261,
+    42
+   ],
+   [
+    157.5,
+    331.5,
+    42
+   ]
+  ],
+  "tile_height": 120,
+  "tile_thickness_in_wall_allowance": true,
+  "note": "Open wet-room arrangement; waterproofing, slopes, trap and drainage design require professional detailing"
+ },
+ "fixed_furniture_notes": {
+  "wardrobe": "90 x 24 x 84 inches; three equal 30-inch fronts",
+  "wc": "25-inch projection x 14-inch width x 30-inch tank height; seat 17 inches",
+  "basins": "16 x 12 inches; rim 34 inches AFFL"
+ },
+ "opening_conventions": {
+  "door_leaf": "Nominal leaf dimensions; 1-inch jamb each side and 1-inch head in rough opening",
+  "door_frame_jamb": 1,
+  "door_casing_face_width": 3,
+  "door_casing_projection": 0.5,
+  "door_threshold_z": 0,
+  "door_frame_depth": "match containing wall thickness",
+  "window_dimensions": "Wall opening / unit outside frame dimensions",
+  "window_frame_face": 2,
+  "window_frame_depth": 4,
+  "window_mullion_face": 2,
+  "window_glass_thickness": 0.25,
+  "window_frame_placement": "Centered in 9-inch external wall (2.5-inch reveal each side)",
+  "window_type": "W01-W05 two-panel sliding; V01 louvered/fixed high-level vent",
+  "hinge_angles": "Degrees in plan x-right/y-down; interpolate closed to open using listed endpoints",
+  "installation_tolerances": "Not included; openings are visualization nominal dimensions"
+ },
+ "doorOverrides": {
+  "D03": {
+   "hinge": [
+    163.5,
+    160.5
+   ],
+   "hinge_xyz": [
+    163.5,
+    160.5,
+    0
+   ],
+   "angles": [
+    0,
+    270
+   ],
+   "reason": "X15: with the hinge on the east jamb the leaf swung at anyone standing in the pocket between the west wall and the bedside (browser doorway test). Hinge moved to the west jamb (6 in from the wall) so the door opens flat against the west wall; still swings into R03."
+  },
+  "D05": {
+   "hinge": [
+    153,
+    319.5
+   ],
+   "hinge_xyz": [
+    153,
+    319.5,
+    0
+   ],
+   "angles": [
+    270,
+    180
+   ],
+   "reason": "X13: proposal hinge at the north jamb parks the open leaf across the only route east of the bed (0.40 m < 0.50 m capsule). Hinge moved to the south jamb; still swings into R02."
+  }
+ }
+}

@@ -1,9 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { DoorMotion, planToThree, blenderToThree, IN } from '../src/doorLogic';
 
-const doors = JSON.parse(readFileSync(new URL('../../project/exports/doors.json', import.meta.url), 'utf8')).items;
-const cfg = JSON.parse(readFileSync(new URL('../../project/config/active_dimensions.json', import.meta.url), 'utf8'));
+// Prefer the full project next to web/; a standalone checkout (CI) uses the committed copies.
+const pick = (full: string, local: string) => {
+  const u = new URL(full, import.meta.url);
+  return existsSync(u) ? u : new URL(local, import.meta.url);
+};
+const doors = JSON.parse(readFileSync(pick('../../project/exports/doors.json', '../public/assets/doors.json'), 'utf8')).items;
+const cfg = JSON.parse(readFileSync(pick('../../project/config/active_dimensions.json', './fixtures/active_dimensions.json'), 'utf8'));
 
 describe('DoorMotion', () => {
   it('opens fully in the configured duration and ends in open state', () => {
