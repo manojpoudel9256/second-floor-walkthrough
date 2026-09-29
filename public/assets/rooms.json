@@ -1,0 +1,231 @@
+{
+ "revision": "A5",
+ "spawn": {
+  "position": [
+   6.6548,
+   0.0,
+   4.6482
+  ],
+  "yawRad": 1.570796,
+  "room": "R04",
+  "note": "passage east end at stair landing, facing west toward living (O01/D01); verified free in flood fill"
+ },
+ "items": [
+  {
+   "id": "R01",
+   "label": "Living room",
+   "floorY": 0.0,
+   "boundsThree": {
+    "min": [
+     0.2286,
+     0,
+     0.2286
+    ],
+    "max": [
+     3.8862,
+     0,
+     5.1054
+    ]
+   },
+   "jumpPoint": [
+    2.725,
+    0.0,
+    2.675
+   ],
+   "jumpVerified": true,
+   "photoIdentity": "PHOTO_ROOM_LIVING"
+  },
+  {
+   "id": "R02",
+   "label": "Bedroom 1 (attached bath)",
+   "floorY": 0.0,
+   "boundsThree": {
+    "min": [
+     0.2286,
+     0,
+     5.2197
+    ],
+    "max": [
+     3.8862,
+     0,
+     8.8773
+    ]
+   },
+   "jumpPoint": [
+    3.075,
+    0.0,
+    7.025
+   ],
+   "jumpVerified": true,
+   "photoIdentity": "PHOTO_ROOM_CIRCLE"
+  },
+  {
+   "id": "R03",
+   "label": "Bedroom 2",
+   "floorY": 0.0,
+   "boundsThree": {
+    "min": [
+     4.0005,
+     0,
+     0.2286
+    ],
+    "max": [
+     7.7724,
+     0,
+     4.0767
+    ]
+   },
+   "jumpPoint": [
+    6.475,
+    0.0,
+    2.525
+   ],
+   "jumpVerified": true,
+   "photoIdentity": "PHOTO_ROOM_DIAMOND"
+  },
+  {
+   "id": "R04",
+   "label": "Passage",
+   "floorY": 0.0,
+   "boundsThree": {
+    "min": [
+     4.0005,
+     0,
+     4.191
+    ],
+    "max": [
+     7.7724,
+     0,
+     5.1054
+    ]
+   },
+   "jumpPoint": [
+    5.875,
+    0.0,
+    4.625
+   ],
+   "jumpVerified": true,
+   "photoIdentity": "PHOTO_PASSAGE"
+  },
+  {
+   "id": "R05",
+   "label": "Common bathroom",
+   "floorY": 0.05,
+   "boundsThree": {
+    "min": [
+     4.0005,
+     0,
+     5.2197
+    ],
+    "max": [
+     5.6769,
+     0,
+     7.0866
+    ]
+   },
+   "jumpPoint": [
+    4.825,
+    0.05,
+    6.175
+   ],
+   "jumpVerified": true,
+   "photoIdentity": "PHOTO_WET_AREA"
+  },
+  {
+   "id": "R06",
+   "label": "Attached bathroom",
+   "floorY": 0.05,
+   "boundsThree": {
+    "min": [
+     4.0005,
+     0,
+     7.2009
+    ],
+    "max": [
+     5.6769,
+     0,
+     8.8773
+    ]
+   },
+   "jumpPoint": [
+    4.825,
+    0.05,
+    8.025
+   ],
+   "jumpVerified": true,
+   "photoIdentity": null
+  },
+  {
+   "id": "R07",
+   "label": "Stair landing",
+   "floorY": 0.0,
+   "boundsThree": {
+    "min": [
+     5.7912,
+     0,
+     5.2197
+    ],
+    "max": [
+     7.7724,
+     0,
+     8.8773
+    ]
+   },
+   "jumpPoint": [
+    6.775,
+    0.0,
+    5.575
+   ],
+   "jumpVerified": true,
+   "photoIdentity": null
+  },
+  {
+   "id": "B01",
+   "label": "Balcony (living)",
+   "floorY": -0.0508,
+   "boundsThree": {
+    "min": [
+     -1.8288,
+     0,
+     3.6068
+    ],
+    "max": [
+     0.0,
+     0,
+     5.588
+    ]
+   },
+   "jumpPoint": [
+    -0.925,
+    -0.0508,
+    4.575
+   ],
+   "jumpVerified": true,
+   "photoIdentity": null
+  },
+  {
+   "id": "B02",
+   "label": "Terrace (passage)",
+   "floorY": -0.0508,
+   "boundsThree": {
+    "min": [
+     8.001,
+     0,
+     3.6068
+    ],
+    "max": [
+     9.8298,
+     0,
+     5.588
+    ]
+   },
+   "jumpPoint": [
+    8.925,
+    -0.0508,
+    4.575
+   ],
+   "jumpVerified": true,
+   "photoIdentity": null
+  }
+ ]
+}

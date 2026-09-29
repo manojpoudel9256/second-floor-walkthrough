@@ -1,0 +1,185 @@
+{
+ "revision": "A5",
+ "items": [
+  {
+   "id": "D01",
+   "label": "Out to B01",
+   "baseNode": "DOOR_BASE__D01",
+   "hingeNode": "DOOR_HINGE__D01",
+   "leafNode": "LEAF__D01",
+   "hingeWorld": [
+    0.0,
+    0.0,
+    4.953
+   ],
+   "baseYawRad": -4.712389,
+   "closedAngleRad": 0.0,
+   "openAngleRad": 1.570796,
+   "axis": "local Y (three)",
+   "durationS": 0.6,
+   "exterior": true,
+   "leafLocalCenterThree": [
+    0.4572,
+    1.0693,
+    0.02222
+   ],
+   "leafHalfExtentsThree": [
+    0.4542,
+    1.0613,
+    0.02222
+   ],
+   "rooms": "Living / balcony B01",
+   "source": "active_dimensions.json doors (proposal)"
+  },
+  {
+   "id": "D02",
+   "label": "Into master",
+   "baseNode": "DOOR_BASE__D02",
+   "hingeNode": "DOOR_HINGE__D02",
+   "leafNode": "LEAF__D02",
+   "hingeWorld": [
+    3.7338,
+    0.0,
+    5.2197
+   ],
+   "baseYawRad": -3.141593,
+   "closedAngleRad": 0.0,
+   "openAngleRad": 1.570796,
+   "axis": "local Y (three)",
+   "durationS": 0.6,
+   "exterior": false,
+   "leafLocalCenterThree": [
+    0.4572,
+    1.0693,
+    0.01905
+   ],
+   "leafHalfExtentsThree": [
+    0.4542,
+    1.0613,
+    0.01905
+   ],
+   "rooms": "Living / master",
+   "source": "active_dimensions.json doors (proposal)"
+  },
+  {
+   "id": "D03",
+   "label": "Into bedroom",
+   "baseNode": "DOOR_BASE__D03",
+   "hingeNode": "DOOR_HINGE__D03",
+   "leafNode": "LEAF__D03",
+   "hingeWorld": [
+    4.1529,
+    0.0,
+    4.0767
+   ],
+   "baseYawRad": 0.0,
+   "closedAngleRad": 0.0,
+   "openAngleRad": 1.570796,
+   "axis": "local Y (three)",
+   "durationS": 0.6,
+   "exterior": false,
+   "leafLocalCenterThree": [
+    0.4572,
+    1.0693,
+    0.01905
+   ],
+   "leafHalfExtentsThree": [
+    0.4542,
+    1.0613,
+    0.01905
+   ],
+   "rooms": "Passage / bedroom",
+   "source": "active_dimensions.json doors (override X13)"
+  },
+  {
+   "id": "D04",
+   "label": "Into common WC",
+   "baseNode": "DOOR_BASE__D04",
+   "hingeNode": "DOOR_HINGE__D04",
+   "leafNode": "LEAF__D04",
+   "hingeWorld": [
+    4.1529,
+    0.0,
+    5.2197
+   ],
+   "baseYawRad": 0.0,
+   "closedAngleRad": 0.0,
+   "openAngleRad": -1.570796,
+   "axis": "local Y (three)",
+   "durationS": 0.6,
+   "exterior": false,
+   "leafLocalCenterThree": [
+    0.381,
+    1.0943,
+    -0.01905
+   ],
+   "leafHalfExtentsThree": [
+    0.378,
+    1.0363,
+    0.01905
+   ],
+   "rooms": "Passage / common WC",
+   "source": "active_dimensions.json doors (proposal)"
+  },
+  {
+   "id": "D05",
+   "label": "Out into master",
+   "baseNode": "DOOR_BASE__D05",
+   "hingeNode": "DOOR_HINGE__D05",
+   "leafNode": "LEAF__D05",
+   "hingeWorld": [
+    3.8862,
+    0.0,
+    8.1153
+   ],
+   "baseYawRad": -4.712389,
+   "closedAngleRad": 0.0,
+   "openAngleRad": 1.570796,
+   "axis": "local Y (three)",
+   "durationS": 0.6,
+   "exterior": false,
+   "leafLocalCenterThree": [
+    0.381,
+    1.0943,
+    0.01905
+   ],
+   "leafHalfExtentsThree": [
+    0.378,
+    1.0363,
+    0.01905
+   ],
+   "rooms": "Master / attached WC",
+   "source": "active_dimensions.json doors (override X13)"
+  },
+  {
+   "id": "D06",
+   "label": "Out to B02",
+   "baseNode": "DOOR_BASE__D06",
+   "hingeNode": "DOOR_HINGE__D06",
+   "leafNode": "LEAF__D06",
+   "hingeWorld": [
+    8.001,
+    0.0,
+    5.1054
+   ],
+   "baseYawRad": -4.712389,
+   "closedAngleRad": 0.0,
+   "openAngleRad": -1.570796,
+   "axis": "local Y (three)",
+   "durationS": 0.6,
+   "exterior": true,
+   "leafLocalCenterThree": [
+    0.4572,
+    1.0693,
+    -0.02222
+   ],
+   "leafHalfExtentsThree": [
+    0.4542,
+    1.0613,
+    0.02222
+   ],
+   "rooms": "Passage / balcony B02",
+   "source": "active_dimensions.json doors (proposal)"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "projectId": "second_floor_interior",
+ "revision": "A5",
+ "variant": "PROVISIONAL_LAYOUT",
+ "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
+ "exported": "2026-09-29T12:17:56",
+ "blender": "5.2.0 LTS",
+ "source": {
+  "path": "references/proposed_plan/Second_Story_3D_Dimensions.json",
+  "revision": "03",
+  "sha256": "0fdfdbe8c676a508bb0b4093b59e572ae4f7fb0ba7cca7656e73bd811b4eb8f1"
+ },
+ "units": "metres",
+ "up": "+Y (three)",
+ "threeFromBlender": "(x, z, -y)",
+ "threeFromPlanInches": "(x, z, y) * 0.0254",
+ "heights_m": {
+  "ffl": 0.0,
+  "slabUnderside": 3.048,
+  "slabTop": 3.2003999999999997,
+  "traySoffit": 2.8956,
+  "centralCeiling": 2.9972,
+  "note": "Minimum clear under tray = 114 in (9 ft 6 in). Alternate: if 10 ft is finished soffit, add 6 in to all three."
+ },
+ "roomFloorRise_m": {
+  "R05": 0.05,
+  "R06": 0.05
+ },
+ "player": {
+  "radius_m": 0.22,
+  "height_m": 1.7,
+  "eye_m": 1.6,
+  "walk_m_s": 1.4,
+  "maxStep_m": 0.08
+ },
+ "glb": {
+  "file": "second_floor.glb",
+  "bytes": 18795516,
+  "sha256": "495506092d854e3adfa1379a119949ebb2c4bd3a20286706ac0f8d804458499f"
+ },
+ "counts": {
+  "exportedObjects": 690,
+  "doors": 6,
+  "staticColliders": 70,
+  "floorColliders": 42,
+  "navColliders": 8,
+  "furnitureColliders": 20
+ },
+ "calibration": {
+  "D01_hinge_three": [
+   0.0,
+   0.0,
+   4.953
+  ],
+  "D01_hinge_plan_in": [
+   0,
+   195,
+   0
+  ],
+  "expected_three_from_plan": [
+   0.0,
+   0.0,
+   4.952999999999999
+  ]
+ },
+ "privacy": "No construction photos/video are included in exports."
+}
