@@ -3,7 +3,7 @@
  "revision": "A7",
  "variant": "PROVISIONAL_LAYOUT",
  "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
- "exported": "2026-09-29T16:37:04",
+ "exported": "2026-09-29T16:52:23",
  "blender": "5.2.0 LTS",
  "source": {
   "path": "references/proposed_plan/Second_Story_3D_Dimensions.json",
@@ -35,16 +35,16 @@
  },
  "glb": {
   "file": "second_floor.glb",
-  "bytes": 23322564,
-  "sha256": "5456f28363b60843effe453677f0ff2adaa43d2de97ccfda6cddbf585d8b46fd"
+  "bytes": 23542008,
+  "sha256": "26514c1e3935cc648f4528dc24b773d4ae98b5aae54bc1aae999790f48f94714"
  },
  "counts": {
-  "exportedObjects": 783,
+  "exportedObjects": 867,
   "doors": 6,
   "staticColliders": 70,
   "floorColliders": 42,
   "navColliders": 8,
-  "furnitureColliders": 22
+  "furnitureColliders": 24
  },
  "calibration": {
   "D01_hinge_three": [

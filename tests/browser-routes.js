@@ -57,8 +57,12 @@
   S.toggleDoor('D02'); S.idle(1.0); rec('re-toggle backs the door away (opens)', S.state().doors.D02.state === 'open', S.state().doors.D02);
 
   // 8 furniture is not climbable; walls not passable
-  closeAll(); tp(95, 100); s = S.walk(0, -V, 2.0); rec('sofa blocks (not stepped onto)', s.feetY < 0.1 && s.pos[2] > 50 * IN, s);   // sofa on the north wall (A7)
-  tp(81, 120); s = S.walk(-V * 3, 0, 4); rec('exterior wall E04 holds at speed', s.pos[0] > 9 * IN, s);
+  closeAll(); tp(95, 110); s = S.walk(0, V, 2.0); rec('sofa blocks (not stepped onto)', s.feetY < 0.1 && s.pos[2] < 160 * IN, s);   // sofa on the south wall (A9)
+  tp(81, 95); s = S.walk(-V * 3, 0, 4); rec('exterior wall E04 holds at speed', s.pos[0] > 9 * IN, s);
+
+  // 9 bathroom shower (A9): the glass screen is walk-in from the north and blocks a sideways exit
+  closeAll(); open('D04'); tp(178, 232); s = S.walk(0, V, 2.0); rec('R05 shower zone reachable from the north', s.room === 'R05' && s.pos[2] > 250 * IN, s);
+  s = S.walk(V, 0, 1.5); rec('glass screen blocks eastward exit', s.pos[0] < 194 * IN, s);
 
   closeAll(); S.teleport(...S.spawn.position); S.look(S.spawn.yawRad);
   return { passed: out.filter((r) => r.pass).length, total: out.length, results: out };
