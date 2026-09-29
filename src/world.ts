@@ -56,7 +56,8 @@ export class Physics {
     this.halfHeight = (p.height_m - 2 * p.radius_m) / 2;           // 0.60 for 1.70 m / 0.25 m
     this.body = this.world.createRigidBody(RAPIER.RigidBodyDesc.kinematicPositionBased());
     this.collider = this.world.createCollider(RAPIER.ColliderDesc.capsule(this.halfHeight, this.radius), this.body);
-    this.probe = new RAPIER.Capsule(this.halfHeight, this.radius);
+    // free-space probe is 15 mm slimmer than the player: merely touching furniture is not 'stuck'
+    this.probe = new RAPIER.Capsule(this.halfHeight, this.radius - 0.015);
     this.controller = this.world.createCharacterController(0.02);
     this.controller.setUp({ x: 0, y: 1, z: 0 });
     this.controller.setMaxSlopeClimbAngle((50 * Math.PI) / 180);

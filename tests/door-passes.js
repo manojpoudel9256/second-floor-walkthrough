@@ -9,7 +9,7 @@
   // plan inches: axis of travel, wall centre-line, clear span along the wall, start coordinate each side, rooms
   const doors = {
     D01: { axis: 'x', wall: 4.5, span: [159, 195], a: { at: -30, room: 'B01' }, b: { at: 40, room: 'R01' } },
-    D02: { axis: 'y', wall: 203.25, span: [111, 147], a: { at: 185, room: 'R01' }, b: { at: 236, room: 'R02' } },
+    D02: { axis: 'y', wall: 203.25, span: [111, 147], a: { at: 185, room: 'R01' }, b: { at: 234, room: 'R02' } },   // 234: just clear of the dresser (y 243.6)
     D03: { axis: 'y', wall: 150.75, span: [163.5, 199.5], a: { at: 120, room: 'R03' }, b: { at: 177, room: 'R04' } },   // X16 wider passage
     D04: { axis: 'y', wall: 203.25, span: [163.5, 193.5], a: { at: 183, room: 'R04' }, b: { at: 236, room: 'R05' } },
     D05: { axis: 'x', wall: 155.25, span: [289.5, 319.5], a: { at: 124, room: 'R02' }, b: { at: 186, room: 'R06' } },
