@@ -57,8 +57,8 @@
   S.toggleDoor('D02'); S.idle(1.0); rec('re-toggle backs the door away (opens)', S.state().doors.D02.state === 'open', S.state().doors.D02);
 
   // 8 furniture is not climbable; walls not passable
-  closeAll(); tp(75, 175); s = S.walk(0, -V, 2.0); rec('sofa blocks (not stepped onto)', s.feetY < 0.1 && s.pos[2] > 150 * IN, s);
-  tp(81, 60); s = S.walk(-V * 3, 0, 4); rec('exterior wall E04 holds at speed', s.pos[0] > 9 * IN, s);
+  closeAll(); tp(95, 100); s = S.walk(0, -V, 2.0); rec('sofa blocks (not stepped onto)', s.feetY < 0.1 && s.pos[2] > 50 * IN, s);   // sofa on the north wall (A7)
+  tp(81, 120); s = S.walk(-V * 3, 0, 4); rec('exterior wall E04 holds at speed', s.pos[0] > 9 * IN, s);
 
   closeAll(); S.teleport(...S.spawn.position); S.look(S.spawn.yawRad);
   return { passed: out.filter((r) => r.pass).length, total: out.length, results: out };

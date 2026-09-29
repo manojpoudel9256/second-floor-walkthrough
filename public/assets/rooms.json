@@ -1,5 +1,5 @@
 {
- "revision": "A6",
+ "revision": "A7",
  "spawn": {
   "position": [
    6.6548,
@@ -28,7 +28,7 @@
     ]
    },
    "jumpPoint": [
-    2.725,
+    2.075,
     0.0,
     2.675
    ],

@@ -46,3 +46,10 @@ A door will not close or open through you. It stops and shows "Door blocked — 
 ## Versions (locked in package-lock.json)
 
 three 0.186.1 · @dimforge/rapier3d-compat 0.21.0 · vite 8.3.1 · typescript 5.9.3 · vitest 5.0.2 · gltf-validator 2.0.0-dev.3.10
+
+## Credits
+
+- Furniture, plants, vases and frames: [Poly Haven](https://polyhaven.com) (CC0).
+- Split AC unit: "Air conditioner" by Poly by Google, [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/), via [poly.pizza](https://poly.pizza/m/5KohLH0xc8d) (modified: scaled, texture cleaned, new material).
+- Sofa, coffee table, jhoomer, TV feature wall, console, TV, rug, paintings: the owner's own LIVINGroom project (custom-made).
+- Architecture, doors (including the carved balcony doors), fans, lamps, beds, sanitaryware and showers: procedural, made for this project.

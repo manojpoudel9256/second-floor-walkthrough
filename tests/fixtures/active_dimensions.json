@@ -1,5 +1,5 @@
 {
- "revision": "A6",
+ "revision": "A7",
  "variant": "PROVISIONAL_LAYOUT",
  "generated": "2026-09-29",
  "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
@@ -813,15 +813,16 @@
    201
   ],
   "z0": 0,
-  "z1": 96,
+  "z1": 118.0,
   "width": 44.0,
-  "height": 96,
+  "height": 118.0,
   "source_bounds_xy": [
    153,
    165,
    157.5,
    201
-  ]
+  ],
+  "source_z1": 96
  },
  "open_stair_mouth": {
   "bounds_xy": [
