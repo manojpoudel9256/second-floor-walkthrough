@@ -52,9 +52,9 @@
     ]
    },
    "jumpPoint": [
-    3.075,
+    3.125,
     0.0,
-    7.025
+    7.325
    ],
    "jumpVerified": true,
    "photoIdentity": "PHOTO_ROOM_CIRCLE"
@@ -76,9 +76,9 @@
     ]
    },
    "jumpPoint": [
-    6.525,
+    5.875,
     0.0,
-    2.325
+    2.775
    ],
    "jumpVerified": true,
    "photoIdentity": "PHOTO_ROOM_DIAMOND"
