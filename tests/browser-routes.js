@@ -68,6 +68,9 @@
   closeAll(); open('D01'); tp(-20, 158); s = S.walk(-V, 0, 2.0); rec('B01: lounge chair is solid', s.room === 'B01' && s.pos[0] > -42 * IN, s);
   closeAll(); open('D06'); tp(330, 183); s = S.walk(V, 0, 2.0); rec('B02: bistro table is solid', s.room === 'B02' && s.pos[0] < 358 * IN, s);
 
+  // 11 wall-hung WC (A11): the bowl and its cistern ledge are solid
+  closeAll(); open('D04'); tp(207, 225); s = S.walk(0, V, 2.0); rec('R05: WC bowl is solid', s.room === 'R05' && s.pos[2] < 250 * IN, s);
+
   closeAll(); S.teleport(...S.spawn.position); S.look(S.spawn.yawRad);
   return { passed: out.filter((r) => r.pass).length, total: out.length, results: out };
 })();
