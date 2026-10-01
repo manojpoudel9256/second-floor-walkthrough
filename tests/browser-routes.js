@@ -47,9 +47,13 @@
   closeAll(); tp(300, 183); open('D06'); s = S.walk(V, 0, 5.0);
   rec('D06 -> terrace B02, parapet stops the player', s.room === 'B02' && s.pos[0] < 391 * IN, s);
 
-  // 6 stair head boundary and well guard
-  closeAll(); tp(288, 215); s = S.walk(0, V, 3.0); rec('stair head nav boundary (no falling)', s.pos[2] < 236 * IN && s.feetY > -0.1, s);
-  tp(245, 215); s = S.walk(0, V, 3.0); rec('well guard holds', s.pos[2] < 234 * IN && s.feetY > -0.1, s);
+  // 6 walkable stair (A15): down both flights to the bottom and back up; the well and the head guard hold
+  closeAll(); tp(288, 215); s = S.walk(0, V, 4.0); rec('stair: down the upper flight to the mid landing', s.room === 'R07' && Math.abs(s.feetY + 1.58) < 0.05, s);
+  s = S.walk(-V, 0, 1.6); s = S.walk(0, -V, 4.5); rec('stair: down the lower flight to the bottom', Math.abs(s.feetY + 3.18) < 0.05, s);
+  s = S.walk(0, V, 5.0); s = S.walk(V, 0, 2.0); s = S.walk(0, -V, 5.0); rec('stair: back up both flights to the passage', s.room === 'R04' && Math.abs(s.feetY - 0.02) < 0.03, s);
+  tp(288, 215); S.walk(0, V, 1.5); s = S.walk(-V, 0, 2.0); rec('stair: the open well is guarded', s.pos[0] > 277 * IN && s.feetY > -1.6, s);
+  tp(245, 215); s = S.walk(0, V, 3.0); rec('stair: head guard over the lower flight holds', s.pos[2] < 234 * IN && s.feetY > -0.1, s);
+  tp(288, 215); S.walk(0, V, 1.3); { const a0 = S.state(); S.idle(3); const b0 = S.state(); rec('stair: no creep standing still mid-flight', Math.abs(b0.pos[2] - a0.pos[2]) < 0.003, b0); }
 
   // 7 door blocked by the player standing in its swing
   closeAll(); open('D02'); tp(129, 222); S.toggleDoor('D02'); S.idle(1.0);

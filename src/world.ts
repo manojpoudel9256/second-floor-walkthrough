@@ -51,6 +51,11 @@ export class Physics {
         this.world.createCollider(RAPIER.ColliderDesc.cuboid(b.h[0], b.h[1], b.h[2]).setTranslation(b.c[0], b.c[1], b.c[2]), fixed);
       }
     }
+    // stair flights: rotated ramp boxes (walk up and down the stairs)
+    for (const b of cols.ramps ?? []) {
+      this.world.createCollider(RAPIER.ColliderDesc.cuboid(b.h[0], b.h[1], b.h[2]).setTranslation(b.c[0], b.c[1], b.c[2])
+        .setRotation({ x: b.q[0], y: b.q[1], z: b.q[2], w: b.q[3] }), fixed);
+    }
     const p = meta.player;
     this.radius = p.radius_m;
     this.halfHeight = (p.height_m - 2 * p.radius_m) / 2;           // 0.60 for 1.70 m / 0.25 m
@@ -60,8 +65,8 @@ export class Physics {
     this.probe = new RAPIER.Capsule(this.halfHeight, this.radius - 0.015);
     this.controller = this.world.createCharacterController(0.02);
     this.controller.setUp({ x: 0, y: 1, z: 0 });
-    this.controller.setMaxSlopeClimbAngle((50 * Math.PI) / 180);
-    this.controller.setMinSlopeSlideAngle((35 * Math.PI) / 180);
+    this.controller.setMaxSlopeClimbAngle((55 * Math.PI) / 180);   // stair ramps are ~38 deg
+    this.controller.setMinSlopeSlideAngle((48 * Math.PI) / 180);   // the 35 deg stair ramps must not slide the player down
     this.controller.enableAutostep(p.maxStep_m, 0.12, false);     // bath threshold 0.05 m; sofa/bed are far higher
     this.controller.enableSnapToGround(0.12);
     this.controller.setApplyImpulsesToDynamicBodies(false);
@@ -165,15 +170,22 @@ export class Physics {
       target.y += 0.01;                                        // probe just above the floor contact
       if (this.capsuleFree(target)) { target.y -= 0.01; this.pos.copy(target); this.collider.setTranslation(this.pos); }
     }
-    this.vy = this.grounded ? -0.5 : Math.max(-20, this.vy - 9.81 * FIXED_DT);
-    const desired = { x: wish.x * FIXED_DT, y: this.vy * FIXED_DT, z: wish.z * FIXED_DT };
+    // 'still' = no input and no door moving (a swinging door needs the controller to resolve contacts every step)
+    let doorMoving = false;
+    for (const d of this.doors.values()) if (d.motion.dir !== 0) { doorMoving = true; break; }
+    const still = !doorMoving && wish.x * wish.x + wish.z * wish.z < 1e-6;
+    // standing still on the stair ramp: only a tiny downward push, so nobody creeps down the flight
+    this.vy = this.grounded ? (still ? -0.02 : -0.5) : Math.max(-20, this.vy - 9.81 * FIXED_DT);
+    // standing still on the ground: no movement request at all (otherwise the controller creeps down the ramp)
+    const desired = { x: wish.x * FIXED_DT, y: still && this.grounded ? 0 : this.vy * FIXED_DT, z: wish.z * FIXED_DT };
     this.controller.computeColliderMovement(this.collider, desired, RAPIER.QueryFilterFlags.EXCLUDE_SENSORS);
     const mv = this.controller.computedMovement();
     this.grounded = this.controller.computedGrounded();
     this.prevPos.copy(this.pos);
     this.pos.set(this.pos.x + mv.x, this.pos.y + mv.y, this.pos.z + mv.z);
-    if (this.grounded && this.pos.y > -0.5) this.lastSafe.copy(this.pos);
-    if (this.pos.y < -1.5) { this.pos.copy(this.lastSafe); this.prevPos.copy(this.pos); this.vy = 0; }  // never fall out
+    if (this.grounded) this.lastSafe.copy(this.pos);
+    // never fall out: below the bottom of the stair (lower floor -3.2 m) means something went wrong -> last safe spot
+    if (this.pos.y < -3.7) { this.pos.copy(this.lastSafe); this.prevPos.copy(this.pos); this.vy = 0; }
     this.body.setNextKinematicTranslation(this.pos);
     this.collider.setTranslation(this.pos);           // door queries below see this step's player position
     for (const d of this.doors.values()) {

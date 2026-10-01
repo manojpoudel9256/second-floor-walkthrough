@@ -23,6 +23,7 @@ export interface ColliderSets {
   floor: BoxDef[];
   nav: BoxDef[];
   furniture: BoxDef[];
+  ramps?: (BoxDef & { q: [number, number, number, number] })[];   // stair flights (rotated boxes)
 }
 
 export interface RoomDef {
