@@ -44,7 +44,9 @@ async function boot() {
   renderer.shadowMap.autoUpdate = false;                                    // redrawn only when a door moves or the light changes
   renderer.shadowMap.needsUpdate = true;
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(mobile ? 75 : 70, innerWidth / innerHeight, 0.05, 200);
+  // near/far kept tight around the house (the player is never closer than 0.22 m to a surface): better depth
+  // precision, so small touching parts (taps, rails, frames) no longer flicker on phones
+  const camera = new THREE.PerspectiveCamera(mobile ? 75 : 70, innerWidth / innerHeight, 0.1, 80);
 
   ui.status.textContent = 'Loading the house…';
   ui.bar.classList.remove('indeterminate');

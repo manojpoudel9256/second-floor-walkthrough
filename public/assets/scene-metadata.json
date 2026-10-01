@@ -3,7 +3,7 @@
  "revision": "A7",
  "variant": "PROVISIONAL_LAYOUT",
  "status": "PROVISIONAL - not as-built; see project/reports/assumptions.csv",
- "exported": "2026-10-01T09:45:07",
+ "exported": "2026-10-01T09:56:43",
  "blender": "5.2.0 LTS",
  "source": {
   "path": "references/proposed_plan/Second_Story_3D_Dimensions.json",
@@ -35,8 +35,8 @@
  },
  "glb": {
   "file": "second_floor.glb",
-  "bytes": 24216020,
-  "sha256": "caec156e8764ed3ee0104e1037caaab3b66be7ccb785325d5866e8189a0fa9e9"
+  "bytes": 24216048,
+  "sha256": "8454fb43f99dbd710d33e20232d73eeb979d209860aadb4dde35a9d4b7d14c39"
  },
  "counts": {
   "exportedObjects": 1083,
