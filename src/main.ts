@@ -205,7 +205,7 @@ async function boot() {
   const ACCEL = 1 - Math.exp(-FIXED_DT * 9);
   const eye = new THREE.Vector3();
   let eyeY = NaN;                                                           // low-passed eye height (softens threshold steps)
-  let frameMs = 16.7, adaptT = 0;
+  let frameMs = 16.7, adaptT = 0, dprSteps = 0, dprPending = false;
   function frame(now: number) { frameOnce(now); requestAnimationFrame(frame); }
   function frameOnce(now: number) {
     const dt = Math.min(0.1, (now - last) / 1000); last = now;              // clamp after tab switches
@@ -241,15 +241,21 @@ async function boot() {
     }
     const yaw = new THREE.Euler().setFromQuaternion(camera.quaternion, 'YXZ').y;
     minimap.draw(physics.pos.x, physics.pos.z, yaw, lines);
+    if (dprPending) { dprPending = false; renderer.setPixelRatio(dpr); renderer.setSize(innerWidth, innerHeight, false); }
     for (const f of house.fans) f.node.rotateY(-f.rps * 2 * Math.PI * dt);
     for (const d of physics.doors.values()) if (d.motion.state === 'opening' || d.motion.state === 'closing') { renderer.shadowMap.needsUpdate = true; break; }
     renderer.render(scene, camera);
-    // adaptive resolution: keep the frame rate up on slower phones, sharpen when there is headroom
-    frameMs += (dt * 1000 - frameMs) * 0.05; adaptT += dt;
-    if (adaptT > 2 && mode === 'walk' && !document.hidden) {
-      adaptT = 0;
-      const next = frameMs > 24 ? Math.max(0.75, dpr - 0.15) : frameMs < 15 ? Math.min(dprMax, dpr + 0.1) : dpr;
-      if (Math.abs(next - dpr) > 0.01) { dpr = +next.toFixed(2); renderer.setPixelRatio(dpr); renderer.setSize(innerWidth, innerHeight, false); }
+    // adaptive resolution, settled once: measure for a few seconds after entering, then only ever step DOWN
+    // (at most twice) if the device is slow. A resize clears the canvas, so changing it repeatedly made the
+    // view flash every few seconds (it used to oscillate up and down every 2 s on fast screens).
+    if (started && mode === 'walk' && !document.hidden && dprSteps < 2) {
+      adaptT += dt;
+      if (adaptT > 1.0) frameMs += (Math.min(dt, 0.1) * 1000 - frameMs) * 0.03;      // ignore the first second (loading, warm-up)
+      if (adaptT > 5.0) {
+        adaptT = 1.0;
+        if (frameMs > 26 && dpr > 0.76) { dpr = +Math.max(0.75, dpr - 0.25).toFixed(2); dprPending = true; dprSteps++; }
+        else dprSteps = 2;                                                          // fast enough: stop adapting for good
+      }
     }
     debug.tick(() => `fps ${debug.fps.toFixed(0)}  calls ${renderer.info.render.calls}  tris ${renderer.info.render.triangles}\n` +
       `pos ${physics.pos.x.toFixed(2)} ${physics.feetY().toFixed(3)} ${physics.pos.z.toFixed(2)}  grounded ${physics.grounded}\n` +

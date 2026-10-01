@@ -115,5 +115,16 @@ function tuneMaterial(mat: THREE.MeshStandardMaterial) {
   if (n.startsWith('M_Glass')) { mat.transparent = true; mat.depthWrite = false; mat.roughness = 0.05; mat.metalness = 0; mat.opacity = Math.min(mat.opacity, 0.22); }
   if (n.startsWith('M_Mirror')) { mat.metalness = 1; mat.roughness = 0.03; mat.envMapIntensity = 1.4; }
   if (n.startsWith('M_Floor_Marble')) { mat.envMapIntensity = 0.9; }
+  // Jhoomer crystals (and any other KHR_materials_transmission glass): real refraction needs a second full-scene
+  // render every frame and renders BLACK or flickers on many phone GPUs. Use bright reflective transparent glass instead.
+  const phys = mat as THREE.MeshPhysicalMaterial;
+  if (phys.isMeshPhysicalMaterial && phys.transmission > 0) {
+    phys.transmission = 0; phys.thickness = 0;
+    phys.transparent = true; phys.opacity = 0.42; phys.depthWrite = false;
+    phys.color.set(0xf4f8ff); phys.metalness = 0.0; phys.roughness = 0.02;
+    phys.envMapIntensity = 2.2; phys.specularIntensity = 1.0; phys.clearcoat = 1.0; phys.clearcoatRoughness = 0.02;
+    phys.emissive.set(0x3a2a18); phys.emissiveIntensity = 0.6;               // warm inner glow from the lamps
+    phys.side = THREE.DoubleSide;
+  }
   if (n.startsWith('M_Cove_LED') || n.startsWith('M_Downlight') || n.startsWith('M_Bath_Light')) mat.toneMapped = true;
 }
