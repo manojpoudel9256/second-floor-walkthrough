@@ -64,6 +64,10 @@
   closeAll(); open('D04'); tp(178, 232); s = S.walk(0, V, 2.0); rec('R05 shower zone reachable from the north', s.room === 'R05' && s.pos[2] > 250 * IN, s);
   s = S.walk(V, 0, 1.5); rec('glass screen blocks eastward exit', s.pos[0] < 194 * IN, s);
 
+  // 10 balconies (A10): outdoor furniture is solid; the gap between B01's lounge chairs stays free (D01 step-back zone)
+  closeAll(); open('D01'); tp(-20, 158); s = S.walk(-V, 0, 2.0); rec('B01: lounge chair is solid', s.room === 'B01' && s.pos[0] > -42 * IN, s);
+  closeAll(); open('D06'); tp(330, 183); s = S.walk(V, 0, 2.0); rec('B02: bistro table is solid', s.room === 'B02' && s.pos[0] < 358 * IN, s);
+
   closeAll(); S.teleport(...S.spawn.position); S.look(S.spawn.yawRad);
   return { passed: out.filter((r) => r.pass).length, total: out.length, results: out };
 })();

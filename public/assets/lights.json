@@ -112,6 +112,94 @@
    ]
   },
   {
+   "id": "LIGHT__LANT01",
+   "type": "POINT",
+   "position": [
+    -0.2032,
+    1.97,
+    3.81
+   ],
+   "color": [
+    1.0,
+    0.75,
+    0.5
+   ],
+   "watts": 15.0,
+   "room": "B01",
+   "kelvin": 2700,
+   "direction": [
+    0.0,
+    -1.0,
+    -0.0
+   ]
+  },
+  {
+   "id": "LIGHT__LANT02",
+   "type": "POINT",
+   "position": [
+    -0.2032,
+    1.97,
+    5.1816
+   ],
+   "color": [
+    1.0,
+    0.75,
+    0.5
+   ],
+   "watts": 15.0,
+   "room": "B01",
+   "kelvin": 2700,
+   "direction": [
+    0.0,
+    -1.0,
+    -0.0
+   ]
+  },
+  {
+   "id": "LIGHT__LANT03",
+   "type": "POINT",
+   "position": [
+    8.2042,
+    1.97,
+    3.9624
+   ],
+   "color": [
+    1.0,
+    0.75,
+    0.5
+   ],
+   "watts": 15.0,
+   "room": "B02",
+   "kelvin": 2700,
+   "direction": [
+    0.0,
+    -1.0,
+    -0.0
+   ]
+  },
+  {
+   "id": "LIGHT__LANT04",
+   "type": "POINT",
+   "position": [
+    8.2042,
+    1.97,
+    5.334
+   ],
+   "color": [
+    1.0,
+    0.75,
+    0.5
+   ],
+   "watts": 15.0,
+   "room": "B02",
+   "kelvin": 2700,
+   "direction": [
+    0.0,
+    -1.0,
+    -0.0
+   ]
+  },
+  {
    "id": "LIGHT__PEND01",
    "type": "POINT",
    "position": [
